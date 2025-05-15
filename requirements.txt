@@ -1,0 +1,4 @@
+pip install pandas sqlalchemy
+pip install openpyxl
+pip install fastapi uvicorn sqlalchemy
+pip install fastapi uvicorn python-jose[cryptography] passlib[bcrypt]

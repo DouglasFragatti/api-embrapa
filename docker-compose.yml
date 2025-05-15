@@ -1,0 +1,49 @@
+# Criar o conteúdo do Dockerfile e docker-compose.yml com base no projeto analisado
+
+dockerfile_content = """
+# Usando imagem oficial do Python
+FROM python:3.11-slim
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos do projeto
+COPY . /app
+
+# Instala as dependências
+RUN pip install --upgrade pip \\
+    && pip install -r requirements.txt
+
+# Expõe a porta do FastAPI
+EXPOSE 8000
+
+# Comando para iniciar a aplicação
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+"""
+
+docker_compose_content = """
+version: '3.9'
+
+services:
+  api:
+    build: .
+    container_name: vitivinicultura_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DB_PATH=vitivinicultura.db
+"""
+
+# Salvar os arquivos dentro do projeto
+dockerfile_path = os.path.join(project_root, "Dockerfile")
+compose_path = os.path.join(project_root, "docker-compose.yml")
+
+with open(dockerfile_path, "w") as f:
+    f.write(dockerfile_content.strip())
+
+with open(compose_path, "w") as f:
+    f.write(docker_compose_content.strip())
+
+dockerfile_path, compose_path

@@ -23,7 +23,7 @@ API desenvolvida com **FastAPI** para fornecer dados vitivinícolas públicos ex
 1. **Clone o repositório**
 
 ```bash
-git clone https://github.com/seu-usuario/API_Fiap.git
+git clone https://github.com/DouglasFragatti/api-embrapa.git
 cd API_Fiap
 
 
