@@ -19,7 +19,7 @@ API desenvolvida para consulta de dados da vitivinicultura brasileira com base n
 ├── main.py               # Inicialização da API
 ├── models.py             # Modelos do banco (SQLAlchemy)
 ├── database.py           # Conexão com o SQLite
-├── create_tables.py      # Script de criação das tabelas
+├── cria_banco.py      # Script de criação das tabelas
 ├── routers/              # Rotas separadas por área (produção, exportação, etc.)
 ├── data/csvs/            # Arquivos CSV originais da Embrapa
 ├── vitivinicultura.db    # Banco de dados SQLite
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 ### 4. Crie o banco de dados e as tabelas
 
 ```bash
-python create_tables.py
+python cria_banco.py
 ```
 
 ### 5. Execute a API com Uvicorn
