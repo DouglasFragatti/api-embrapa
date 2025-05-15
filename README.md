@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 
 4. Crie o banco e as tabelas
-python create_tables.py
+python cria_banco.py
 
 
 5. Execute a API
