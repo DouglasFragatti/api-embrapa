@@ -1,48 +1,95 @@
-# API Vitivinicultura - FIAP
+# 🍇 API Vitivinicultura - Embrapa
 
-API desenvolvida com **FastAPI** para fornecer dados vitivinícolas públicos extraídos do portal da **Embrapa (Vitibrasil)**.
+API desenvolvida para consulta de dados da vitivinicultura brasileira com base nos arquivos CSV públicos da Embrapa. Permite acesso a dados de produção, comercialização, exportação e importação de uvas, vinhos e derivados.
 
-## - Funcionalidades
+---
 
-- Consulta de dados: produção, comercialização, exportação e importação
-- Dados estruturados a partir de arquivos CSV
-- Banco de dados SQLite local (com possibilidade de migração para PostgreSQL)
-- Pronta para rotas autenticadas com JWT (em construção)
+## 🚀 Funcionalidades
 
-## Estrutura do Projeto
-├── main.py # Inicialização da API
-├── models.py # Modelos do banco (SQLAlchemy)
-├── database.py # Conexão com o SQLite
-├── create_tables.py # Script de criação das tabelas
-├── routers/ # Rotas separadas por área
-├── data/csvs/ # Arquivos CSV da Embrapa
-├── vitivinicultura.db # Banco de dados SQLite
-├── requirements.txt
-└── README.md # Documentação
+- 🔍 Consulta de dados: produção, comercialização, exportação e importação
+- 📊 Dados estruturados a partir de arquivos CSV
+- 🗃️ Banco de dados SQLite local (com possibilidade futura de PostgreSQL)
+- 🔐 Estrutura pronta para autenticação com JWT (em construção)
 
-1. **Clone o repositório**
+---
+
+## 🧱 Estrutura do Projeto
+
+```
+├── main.py               # Inicialização da API
+├── models.py             # Modelos do banco (SQLAlchemy)
+├── database.py           # Conexão com o SQLite
+├── create_tables.py      # Script de criação das tabelas
+├── routers/              # Rotas separadas por área (produção, exportação, etc.)
+├── data/csvs/            # Arquivos CSV originais da Embrapa
+├── vitivinicultura.db    # Banco de dados SQLite
+├── requirements.txt      # Dependências do projeto
+└── README.md             # Esta documentação
+```
+
+---
+
+## 🛠️ Como executar localmente
+
+### 1. Clone o repositório
 
 ```bash
 git clone https://github.com/DouglasFragatti/api-embrapa.git
-cd API_Fiap
+cd api-embrapa
+```
 
+### 2. Crie e ative o ambiente virtual
 
-2. **Crie um ambiente virtual e ative-o
+```bash
 python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+# Ative:
+# Windows:
+venv\Scripts\activate
 
+# Linux/macOS:
+source venv/bin/activate
+```
 
-3. Instale as dependências
+### 3. Instale as dependências
+
+```bash
 pip install -r requirements.txt
+```
 
+### 4. Crie o banco de dados e as tabelas
 
-4. Crie o banco e as tabelas
-python cria_banco.py
+```bash
+python create_tables.py
+```
 
+### 5. Execute a API com Uvicorn
 
-5. Execute a API
+```bash
 uvicorn main:app --reload
+```
 
+---
 
-Acesse: http://localhost:8000/docs
+## 📫 Acesse a documentação
+
+Acesse a interface interativa da API em:
+
+🔗 [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+## 📦 Deploy (em breve)
+
+O projeto será publicado com link público gratuito via [Render.com](https://render.com) ou Railway.
+
+---
+
+## 💡 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
